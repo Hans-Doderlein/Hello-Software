@@ -71,10 +71,12 @@ const resolvers = {
       }
     },
     createClient: async (parent, { ClientInput }) => {
-      return Clients.create(ClientInput);
+      const client = await Clients.create(ClientInput);
+      return client;
     },
     createTutor: async (parent, { TutorInput }) => {
-      return Tutors.create(TutorInput);
+      const tutor = await Tutors.create(TutorInput);
+      return tutor;
     },
   },
 };
